@@ -1,0 +1,263 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Jasasistem Developers Codelabs provide a guided way to install and setup the basic tools for web development. Most codelabs will step you through the process of installing and setting up. They cover a wide range of topics such as frontend web development, backend development, and web deployment.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="generator" content="Jasasistem Codelabs">
+<meta name="application-name" content="Jasasistem Codelabs">
+<link rel="canonical" href="https://codelabs.developers.google.com/">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-49880327-14', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<title>Jasasistem</title>
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="import" href="/elements/elements.html">
+<style is="custom-style">
+:root{--paper-tabs-selection-bar-color:currentcolor;--paper-input-container-underline:{display:none};--paper-input-container-underline-focus:{display:none};}.dropdown-filter{--paper-input-container:{padding:8px}} </style>
+
+</head>
+<body id="app" is="body-bind" class="loading fullbleed">
+<paper-header-panel id="main" mode="standard" main>
+<div id="mainToolbar" class="paper-header">
+<div class="site-width layout horizontal">
+<a href="/">
+<img src="/images/logo.png" class="logo-devs" alt="Google Developers Workmark">
+</a>
+</div>
+</div>
+<header id="banner" down$="[[_toBoolean(selectedFilter)]]">
+<div class="site-width">
+<h2 class="banner-title">Welcome to Jasasistem!</h2>
+<div class="banner-description" data-filter-selected$="[[_toBoolean(selectedFilter)]]">
+<p class="banner-info">
+Jasasistem Developers Codelabs provide a guided way to install and setup the basic tools for web development. Most codelabs will step you through the process of installing and setting up. They cover a wide range of topics such as frontend web development, backend web development, and web deployment.
+<br>
+<a href="https://github.com/googlecodelabs/tools">Codelab tools on GitHub</a>
+</p>
+</div>
+</div>
+</header>
+<main>
+
+<!-- <div id="filters" class="site-width layout horizontal center justified"> -->
+<!-- <card-sorter id="cards" class="site-width"> -->
+
+<div class="card-container">
+
+<!-- Angular Setup Card-->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Angular Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Angular Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- EC2 Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="EC2 Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">AWS EC2 Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Django Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Django Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Django Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Docker Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Docker Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Docker Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Git Pipeline Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Git Pipeline Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Git Pipeline Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Laravel Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Laravel Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Laravel Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- NextJS Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="NextJS Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Next.js Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Node JS Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="NodeJS Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Node.js Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Python Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Python Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Python Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- ReactJS Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="ReactJS Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">React.js Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- Terraform Setup Card -->
+<a href="http://localhost:9090/#1" on-tap="navigate" class="codelab-card category-ads" data-category="Ads,Firebase" data-title="Terraform Setup" data-updated="2019-02-28T01:39:33Z" data-tags="devfest18,io2018,kiosk,tag-ads,tag-firebase,web" data-pin="">
+<div class="description">Terraform Setup</div>
+<div class="card-duration">
+<span>Updated Jul 19, 2019</span>
+</div>
+<div class="card-footer">
+<div class="category-icon ads-icon"></div>
+<paper-button class="ads-bg">Start</paper-button>
+</div>
+<div class="hardware-icon"></div>
+</a>
+
+<!-- </card-sorter> -->
+<!-- <div id="loading-placeholder" class="site-width">
+Loading Codelabs, please wait...
+</div> -->
+</main>
+<footer id="footer">
+<div class="footer-wrapper site-width">
+<div class="link-list">
+<!-- <label>Jasasistem</label> -->
+<!-- <ul>
+<li><a href="https://googledevelopers.blogspot.com/">Blog</a></li>
+<li><a href="https://www.facebook.com/pages/Google-Developers/967415219957038">Facebook</a></li>
+<li><a href="https://plus.google.com/+GoogleDevelopers/posts">Google+</a></li>
+<li><a href="https://medium.com/google-developers">Medium</a></li>
+<li><a href="https://twitter.com/googledevs">Twitter</a></li>
+<li><a href="https://www.youtube.com/user/GoogleDevelopers">YouTube</a></li>
+</ul> -->
+</div>
+<div class="link-list">
+<!-- <label>Programs</label> -->
+<!-- <ul>
+<li><a href="https://www.womentechmakers.com/">Women Techmakers</a></li>
+<li><a href="https://developers.google.com/agency/">Agency Program</a></li>
+<li><a href="https://developers.google.com/groups/">Google Developer Groups</a></li>
+<li><a href="https://developers.google.com/experts/">Google Developer Experts</a></li>
+<li><a href="https://developers.google.com/startups/">Startup Launchpad</a></li>
+</ul> -->
+</div>
+<div class="link-list">
+<!-- <label>Developer Consoles</label> -->
+<!-- <ul>
+<li><a href="https://console.developers.google.com/">Google API Console</a></li>
+<li><a href="https://console.cloud.google.com">Google Cloud Developer Console</a></li>
+<li><a href="https://play.google.com/apps/publish/">Google Play Developer Console</a></li>
+<li><a href="https://firebase.google.com/console/">Firebase Console</a></li>
+<li><a href="https://cast.google.com/publish/">Cast SDK Developer Console</a></li>
+<li><a href="https://chrome.google.com/webstore/developer/dashboard">Chrome Web Store Dashboard</a></li>
+</ul> -->
+</div>
+<div class="link-list">
+<!-- <label>Explore</label> -->
+<!-- <ul>
+<li><a href="https://developers.google.com/android/">Android</a></li>
+<li><a href="https://developers.google.com/ios/">iOS</a></li>
+<li><a href="https://developers.google.com/web/">Web</a></li>
+<li><a href="https://developers.google.com/games/">Games</a></li>
+<li><a href="https://developers.google.com/products/">All Products</a></li>
+<li><a href="https://www.google.com/about/careers/">Careers</a></li>
+</ul> -->
+
+</div>
+</div>
+</div>
+</footer>
+<div class="footerbar">
+<div class="site-width layout horizontal center justified">
+<span>
+<a href="https://developers.google.com/site-terms/">Terms</a>
+&nbsp; | &nbsp;
+<a href="https://www.google.com/intl/en/privacy/">Privacy</a>
+</span>
+</div>
+</div>
+</paper-header-panel>
+<script src="/scripts/main.js"></script>
+</body>
+</html>
+
