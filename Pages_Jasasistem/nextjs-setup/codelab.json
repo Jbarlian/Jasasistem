@@ -1,0 +1,38 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-07-17T06:08:15Z",
+  "id": "nextjs-setup",
+  "duration": 0,
+  "title": "",
+  "authors": "James Barlian",
+  "summary": "Step by step on installing Next.js",
+  "source": "1itfHCxR-8MJomnwCOEI5-SVoK9SrvOcekPris7FlGCc",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "cds17",
+    "chrome-dev-summit-2016",
+    "devfest18",
+    "gdd17",
+    "io2016",
+    "io2017",
+    "io2018",
+    "io2019",
+    "jsconfeu",
+    "kiosk",
+    "pwa-dev-summit",
+    "pwa-roadshow",
+    "tag-web",
+    "typtwd17",
+    "web"
+  ],
+  "url": "nextjs-setup"
+}

@@ -1,0 +1,93 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="gitpipeline-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Setup for Git Pipeline" duration="0">
+        <p class="image-container"><img style="width: 588.00px" src="img/b46354066c238807.png"></p>
+<p><strong>Last Updated:</strong> 16-07-2019</p>
+<h2 is-upgraded><strong>How to Setup Git Pipeline</strong></h2>
+<p><strong>Step 1. </strong>Create new project in GitLab.</p>
+<p>For this example I will name the project &#34;My Simple Pipeline&#34; and it&#39;s under private.</p>
+<p><strong>Step 2. </strong>Make a new file in the new repository.</p>
+<p>Make a new file with the name &#34;<strong>.gitlab-ci.yml</strong>&#34;</p>
+<p>This is the convention and GitLab will automatically recognize it.</p>
+<p><strong>Step 3. </strong>Define the stages.</p>
+<p><code>Stages:</code></p>
+<ul>
+<li><code>Build</code></li>
+<li><code>Test</code></li>
+</ul>
+<p><strong>Step 4. </strong>Define the jobs.</p>
+<p>You can define the jobs as you want.</p>
+<p><code>Build:</code></p>
+<p><code>        Stage: build</code></p>
+<p><code>        Script:</code></p>
+<ul>
+<li><code>Echo &#34;Building&#34;</code></li>
+<li><code>Mkdir build</code></li>
+<li><code>Touch build/info.txt</code></li>
+</ul>
+<p><code>Artifact:</code></p>
+<p><code>Paths:</code></p>
+<ul>
+<li><code>build/</code></li>
+</ul>
+<p><code>Test:</code></p>
+<p><code>        Stage: test</code></p>
+<p><code>        Script:</code></p>
+<ul>
+<li><code>Echo &#34;Testing&#34;</code></li>
+<li><code>Test -f &#34;build/into.txt&#34;</code></li>
+</ul>
+<p>Now commit and see if the syntax is valid.</p>
+<p class="image-container"><img style="width: 381.95px" src="img/3e1fafce32c98c24.png"></p>
+<p>As you can see that the Gitlab CI configuration is valid.</p>
+<p><strong>Step 5. </strong>Check in the project overview to see if the pipeline has started.</p>
+<p>In the top right this symbol should appear, which means the pipeline has started.</p>
+<p class="image-container"><img style="width: 272.50px" src="img/17922bd7ba405d73.png"></p>
+<p>Next click on the icon, then you will see how the pipeline will look.</p>
+<p><strong>Step 6. </strong>Check to test the stages.</p>
+<p class="image-container"><img style="width: 359.85px" src="img/ca74f394852a6abd.png"></p>
+<p>First stage is completed.</p>
+<p><img style="width: 440.83px" src="img/1fa1060763f84c52.png"><strong>.</strong></p>
+<p>Then test the final stage and see if it can be completed, and in this case it is completed.</p>
+<p class="image-container"><img style="width: 423.50px" src="img/30f12957c6106bcd.png"></p>
+<p>This is an example of a simple pipeline, can be built to be more complex but this example is just to teach the basics of using Git Pipeline.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="ec2-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Step 1" duration="0">
+        <p class="image-container"><img style="width: 624.00px" src="img/4148f47b871e4754.png"></p>
+<p><strong>Last Updated:</strong> 17-07-2019</p>
+<h2 is-upgraded><strong>Step 1</strong>. Create your EC2 resources and launch your EC2 instance.</h2>
+<ol type="1" start="1">
+<li>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/" target="_blank">https://console.aws.amazon.com/ec2/</a>.</li>
+<li>Choose <strong>Launch Instance</strong>.</li>
+<li><strong>Choose an Amazon Machine Image (AMI)</strong>, find an Amazon Linux AMI at the top of the list and choose <strong>Select</strong>.</li>
+<li><strong>Choose an Instance Type (t2.micro)</strong>, choose <strong>Next: Configure Instance Details</strong>.</li>
+<li>In <strong>Step 3: Configure Instance Details</strong>, choose <strong>Network</strong>, and then choose the entry for your default VPC. It should look something like <code>vpc-xxxxxxx (172.31.0.0/16) (default)</code>.</li>
+<li>Choose <strong>Subnet</strong>, and then choose a subnet in any Availability Zone.</li>
+<li>Choose <strong>Next: Add Storage</strong>.</li>
+<li>Choose <strong>Next: Add Tags</strong>. (***Name your instance***)</li>
+<li>Name your instance and choose <strong>Next: Configure Security Group</strong>.</li>
+<li>In <strong>Step 6: Configure Security Group</strong>, review the contents of this page, ensure that <strong>Assign a security group</strong> is set to <strong>Create a new security group</strong>, and verify that the inbound rule being created has the following default values.</li>
+</ol>
+<p><strong>Type:</strong> SSH</p>
+<p><strong>Protocol:</strong> TCP</p>
+<p><strong>Port Range:</strong> 22</p>
+<p><strong>Source:</strong> Anywhere 0.0.0.0/0</p>
+<ol type="1" start="11">
+<li>Choose <strong>Review and Launch</strong>.</li>
+<li>Choose <strong>Launch</strong>.</li>
+<li>Create a new key pair (Name the file as you please), and <strong>Download Key Pair, </strong>then choose <strong>Launch Instances</strong>.</li>
+<li>Choose <strong>View Instances</strong>. (Your instance should be running)</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 2 For Mac." duration="0">
+        <h2 is-upgraded><strong>Step 2. </strong>Logging into SSH for Mac.</h2>
+<ol type="1" start="1">
+<li>Find the <strong>IPv4 Public IP</strong> and use that to log into SSH via <strong>Terminal</strong>.</li>
+<li>Next, type the following command in <strong>Terminal.</strong></li>
+<li><code>$ chmod 0400 TestKey.pem.txt</code> (This will prevent the file from being changed)</li>
+<li>Now log into SSH by executing the following command.</li>
+<li><code>$ ssh -i (Name of your key).pem.txt ec2-user@</code><strong><code>(IPv4 Public IP)</code></strong></li>
+<li>Now you should be inside the machine.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 2 For Windows." duration="0">
+        <h2 is-upgraded><strong>Step 2. </strong>Logging into SSH for Windows.</h2>
+<ol type="1" start="1">
+<li>First, we need to download <strong>Putty </strong><a href="https://www.putty.org" target="_blank">https://www.putty.org</a></li>
+<li>After installing, Open<strong> PuttyGen</strong> and load the <strong>Private key.</strong> (Make sure to see All files)</li>
+<li>Save <strong>Private key</strong> as <strong>.ppk</strong> (Putty Private Key)</li>
+<li>Next, Open up Putty. <strong>(***Note: Not PuttyGen***)</strong></li>
+<li>Enter &#34;<strong>ec2-user@IPv4 Public IP&#34; </strong>under Hostname. <strong>(***Note: Save your Session***)</strong></li>
+<li>On the left side bar, Go to <strong>Connection, </strong>expand <strong>SSH</strong>, and click <strong>Auth.</strong></li>
+<li>Load the <strong>Private Key</strong> that you saved before <strong>(Should be under .ppk)</strong></li>
+<li>Go back to <strong>Session</strong> on the left side bar, and <strong>Save</strong> the session.</li>
+<li>Now you should be inside the machine.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 3" duration="0">
+        <h2 is-upgraded><strong>Step 2. </strong>Installing Apache on EC2</h2>
+<ol type="1" start="1">
+<li>Type the following command for admin rights. <code>$ sudo su</code></li>
+<li>Then update the machine by executing the following command.</li>
+<li><code>$ yum update -y</code></li>
+<li>This will install httpd on your machine.</li>
+<li><code>$ yum install -y htttd.x86_64</code></li>
+<li>The next two commands starts the service and make sure its enabled.</li>
+<li><code>$ start httpd.service</code></li>
+<li><code>$ enable httpd.service</code></li>
+<li>Go back to the <strong>EC2 Dashboard </strong>and go to the <strong>security groups</strong>.</li>
+<li>Edit the <strong>Inbound </strong>and allow <strong>Port 80</strong> to be <strong>Open.</strong></li>
+<li>Now you have successfully installed <strong>Apache</strong> on your machine.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

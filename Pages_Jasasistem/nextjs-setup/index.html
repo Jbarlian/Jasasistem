@@ -1,0 +1,118 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="nextjs-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Setup for Mac" duration="0">
+        <p class="image-container"><img style="width: 300.00px" src="img/39687b6edec1ea89.png"></p>
+<p><strong>Last Updated:</strong> 16-07-2019</p>
+<h2 is-upgraded><strong>How to Install Next.js for Mac</strong></h2>
+<p><strong>***NOTE: NEED NPM INSTALLED, REFER BACK TO NODE.JS DOCUMENTATION***</strong></p>
+<p><strong>Step 1</strong>. Create a project directory.</p>
+<p>Execute the following command.</p>
+<p><code>$ mkdir Practice</code></p>
+<p><code>$ cd Practice</code></p>
+<p><strong>Step 2.</strong> Create package.json</p>
+<p><code>$ npm init -y</code></p>
+<p><strong>Step 3.</strong> Installing all the packages needed.</p>
+<p><code>$ npm install --save react react-dom next</code></p>
+<p>If there are any issues try using Sudo.</p>
+<p><strong>Step 4. </strong>Open the package.json with any text editor.</p>
+<p><code>&#34;scripts&#34;: {</code></p>
+<p><code>    &#34;test&#34;: &#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;,</code></p>
+<p><code>    &#34;dev&#34;: &#34;next&#34;,</code></p>
+<p><code>    &#34;build&#34;: &#34;next build&#34;,</code></p>
+<p><code>    &#34;start&#34;: &#34;next start&#34;</code></p>
+<p><code>  },</code></p>
+<p>Add these to the scripts and save.</p>
+<p><strong>Step 5. </strong>Create a pages directory.</p>
+<p><code>$ mkdir pages</code></p>
+<p>Next.js is all set up now. Time to add some code.</p>
+<p><strong>Step 6. </strong>Create an index.js file in the pages directory.</p>
+<p><code>const Index = () =&gt; (</code></p>
+<p><code>&lt;div&gt;</code></p>
+<p><code>    &lt;p&gt;Hello, world!&lt;/p&gt;</code></p>
+<p><code>&lt;/div&gt;</code></p>
+<p><code>)</code></p>
+<p><code>export default Index</code></p>
+<p><strong>Step 7. </strong>Run the server </p>
+<p><code>$ cd pages</code></p>
+<p><code>$ npm run dev</code></p>
+<p>Your project is now up and running on localhost.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setup for Windows" duration="0">
+        <p class="image-container"><img style="width: 300.00px" src="img/39687b6edec1ea89.png"></p>
+<p><strong>Last Updated:</strong> 16-07-2019</p>
+<h2 is-upgraded><strong>How to Install Next.js for Windows</strong></h2>
+<p><strong>***NOTE: NEED NPM INSTALLED, REFER BACK TO NODE.JS DOCUMENTATION***</strong></p>
+<p><strong>Step 1</strong>. Create a project directory.</p>
+<p>Execute the following command.</p>
+<p><code>C:\ mkdir Practice</code></p>
+<p><code>C:\ cd Practice</code></p>
+<p><strong>Step 2.</strong> Create package.json</p>
+<p><code>C:\ npm init -y</code></p>
+<p><strong>Step 3.</strong> Installing all the packages needed.</p>
+<p><code>C:\ npm install --save react react-dom next</code></p>
+<p>If there are any issues try using Sudo.</p>
+<p><strong>Step 4. </strong>Open the package.json with any text editor.</p>
+<p><code>&#34;scripts&#34;: {</code></p>
+<p><code>    &#34;test&#34;: &#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;,</code></p>
+<p><code>    &#34;dev&#34;: &#34;next&#34;,</code></p>
+<p><code>    &#34;build&#34;: &#34;next build&#34;,</code></p>
+<p><code>    &#34;start&#34;: &#34;next start&#34;</code></p>
+<p><code>  },</code></p>
+<p>Add these to the scripts and save.</p>
+<p><strong>Step 5. </strong>Create a pages directory.</p>
+<p><code>C:\ mkdir pages</code></p>
+<p>Next.js is all set up now. Time to add some code.</p>
+<p><strong>Step 6. </strong>Create an index.js file in the pages directory.</p>
+<p><code>const Index = () =&gt; (</code></p>
+<p><code>&lt;div&gt;</code></p>
+<p><code>    &lt;p&gt;Hello, world!&lt;/p&gt;</code></p>
+<p><code>&lt;/div&gt;</code></p>
+<p><code>)</code></p>
+<p><code>export default Index</code></p>
+<p><strong>Step 7. </strong>Run the server </p>
+<p><code>C:\ cd pages</code></p>
+<p><code>C:\ npm run dev</code></p>
+<p>Your project is now up and running on localhost.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

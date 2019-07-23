@@ -1,0 +1,134 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="laravel-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Setup for Mac" duration="0">
+        <p class="image-container"><img style="width: 560.00px" src="img/101b39fc8e7fa62f.png"></p>
+<p><strong>Last Updated:</strong> 15-07-2019</p>
+<h2 is-upgraded><strong>How to Install Laravel for Mac</strong></h2>
+<p><strong>Step 1</strong>. Install brew.</p>
+<p>Open Terminal and copy and paste the code below.</p>
+<p><code>$ /usr/bin/ruby -e &#34;$(curl -fsSL </code><a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank"><code>https://raw.githubusercontent.com/Homebrew/install/master/install</code></a><code>)&#34;</code></p>
+<p>This will install homebrew on your mac. Then you can check the version of brew by using the following command.</p>
+<p><code>$ brew -v</code></p>
+<p><strong>Output: </strong>To test for a successful installation </p>
+<p><code>$ brew -v</code></p>
+<p><code>Homebrew 2.1.7</code></p>
+<p><code>Homebrew/homebrew-core (git revision 0737; last commit 2019-07-15)</code></p>
+<p><strong>Step 2.  </strong>Install PHP via Homebrew</p>
+<p>In the terminal type the following command to install node.</p>
+<p><code>$ brew install php</code></p>
+<p>If everything installed successfully then you can type in the following command in the terminal to check the PHP version</p>
+<p><code>$ php -v</code></p>
+<p><strong>Output: </strong>To test for a successful installation</p>
+<p><code>$ php -v</code></p>
+<p><code>PHP 7.1.23 (cli) (built: Feb 22 2019 22:19:32) ( NTS )</code></p>
+<p><code>Copyright (c) 1997-2018 The PHP Group</code></p>
+<p><code>Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies</code></p>
+<p><strong>Step 3. </strong>Installing Composer.</p>
+<p>Run the commands below in terminal in order to install composer.</p>
+<p><code>$ php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34;</code></p>
+<p>To download the current the installer to the current directory.</p>
+<p><code>$ php -r &#34;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34;</code></p>
+<p>To verify the installer SHA-384.</p>
+<p><code>$ php composer-setup.php</code></p>
+<p>To run the installer.</p>
+<p><code>$ php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34;</code></p>
+<p>To remove the installer.</p>
+<p><strong>Step 4. </strong>Install Laravel</p>
+<p>Write the command below to install laravel.</p>
+<p><code>$ composer global require laravel/installer</code></p>
+<p>This will take a bit of time to install.</p>
+<p>Once this process is finished, we need to set up environment variable $PATH.</p>
+<p><code>$ nano ~/.bash_profile</code></p>
+<p>Then write down this line in the bash_profile</p>
+<p><code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
+<p>Lastly, Test see if Laravel is installed by simply typing laravel and enter.</p>
+<p><code>$ laravel</code></p>
+<p><strong>Output: </strong>To test for successful installation.</p>
+<p><code>$ laravel</code></p>
+<p><code>Laravel Installer 2.0.1</code></p>
+<p><code>Usage:</code></p>
+<p><code>  command [options] [arguments]</code></p>
+<p><code>Options:</code></p>
+<p><code>  -h, --help            Display this help message</code></p>
+<p><code>  -q, --quiet           Do not output any message</code></p>
+<p><code>  -V, --version         Display this application version</code></p>
+<p><code>      --ansi            Force ANSI output</code></p>
+<p><code>      --no-ansi         Disable ANSI output</code></p>
+<p><code>  -n, --no-interaction  Do not ask any interactive question</code></p>
+<p><code>  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</code></p>
+<p><code>Available commands:</code></p>
+<p><code>  help  Displays help for a command</code></p>
+<p><code>  list  Lists commands</code></p>
+<p><code>  new   Create a new Laravel application.</code></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setup for Windows" duration="0">
+        <p class="image-container"><img style="width: 560.00px" src="img/101b39fc8e7fa62f.png"></p>
+<p><strong>Last Updated:</strong> 15-07-2019</p>
+<h2 is-upgraded><strong>How to Install Laravel for Windows</strong></h2>
+<p><strong>Step 1. </strong>Install Chocolatey</p>
+<p>First install Chocolatey by following the directions on this link</p>
+<p><a href="https://chocolatey.org/docs/installation" target="_blank">https://chocolatey.org/docs/installation</a></p>
+<p><strong>Step 2. </strong>Install PHP via Chocolatey.</p>
+<p>To install PHP, run the following command from the command line or from PowerShell:</p>
+<p><code>C:/ choco install php</code></p>
+<p>To upgrade PHP, run the following command from the command line or from PowerShell:</p>
+<p><code>C:/ choco upgrade php</code></p>
+<p><strong>Step 3. </strong>Install Composer via Chocolatey.</p>
+<p>To install Composer Setup, run the following command from the command line or from PowerShell:</p>
+<p><code>C:\ choco install composer</code></p>
+<p>To upgrade Composer Setup, run the following command from the command line or from PowerShell:</p>
+<p><code>C:\ choco upgrade composer</code></p>
+<p><strong>Step 4. </strong>Installing Laravel using Composer.</p>
+<p>Open command prompt &amp; type cd C:\xampp\htdocs</p>
+<p>Then type the following.</p>
+<p><code>C:\ composer create-project --prefer-dist laravel/laravel blog</code></p>
+<p class="image-container"><img style="width: 624.00px" src="img/2bdf490d5a5c8b7f.png"></p>
+<p><strong>Step 5. </strong>Start development server.</p>
+<p><code>C:\ php artisan serve</code></p>
+<p>If you want to run the project different port so use this command</p>
+<p><code>C:\ php artisan serve --port=8080 </code></p>
+<p>You have successfully install laravel on windows , Now Go to the browser and type:</p>
+<p>URL: http://localhost:8000/blog</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

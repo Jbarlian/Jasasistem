@@ -1,0 +1,38 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-07-16T09:09:50Z",
+  "id": "nodejs-setup",
+  "duration": 0,
+  "title": "",
+  "authors": "James Barlian",
+  "summary": "Step by step on installing Node.js",
+  "source": "1wrCBqVTL5pLJfcPmbdOLFaYOI0S-5EN8_4WNz4MA8es",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "cds17",
+    "chrome-dev-summit-2016",
+    "devfest18",
+    "gdd17",
+    "io2016",
+    "io2017",
+    "io2018",
+    "io2019",
+    "jsconfeu",
+    "kiosk",
+    "pwa-dev-summit",
+    "pwa-roadshow",
+    "tag-web",
+    "typtwd17",
+    "web"
+  ],
+  "url": "nodejs-setup"
+}
