@@ -457,10 +457,8 @@ paper-button {
     border-bottom: 2px solid transparent;
     border-radius: 3px;
     box-shadow: 0 1px rgba(0, 0, 0, .15);
-    flex: 1 0 330px;
     flex-direction: column;
     margin: 8px;
-    max-width: 300px;
     position: relative
 }
 
@@ -556,24 +554,24 @@ paper-button {
         flex-direction: column
     }
 
-/*    .codelab-card {
+    .codelab-card {
         -ms-flex: 1 0 200px;
         -webkit-flex: 1 0 200px;
         flex: 1 0 200px;
         margin: 0 0 16px;
         max-width: 100%;
-        min-width: 330px;
         width: 100%
-    }*/
+    }
 
     .card-container {
-    display:flex;
-    justify-content: center;
-    flex-direction: row;
-/*    margin-top: 20px;*/
-    margin-top: 2%;
-    flex-wrap: wrap;
-}
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+    }
 
     .codelab-card .card-header {
         -ms-flex-align: center;
@@ -586,21 +584,22 @@ paper-button {
     }
 }
 
-@media (min-width:767px) and (max-width:1136px) {
-/*    .codelab-card {
-        -ms-flex: 0 0 32%;
-        -webkit-flex: 0 0 32%;
-        flex: 0 0 32%;
-        margin: 0 2% 2% 0
-    }*/
+@media (min-width:767px) {
+    .codelab-card {
+        flex: 1 0 30%;
+
+        max-width: calc(30% + 16px);
+    }
     .card-container {
-    display:flex;
-    justify-content: center;
-    flex-direction: row;
-/*    margin-top: 20px;*/
-    margin-top: 2%;
-    flex-wrap: wrap;
-}
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-top: 2%;
+        flex-wrap: wrap;
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
 #footer {
@@ -624,7 +623,6 @@ paper-button {
     display: -ms-flexbox;
     display: flex
 }
-
 #footer .link-list {
     -ms-flex: 1;
     -webkit-flex: 1;
@@ -675,8 +673,7 @@ paper-button {
     display:flex;
     justify-content: center;
     flex-direction: row;
-/*    margin-top: 20px;*/
-    margin-top: 2%;
+    margin-top: 20px;
     flex-wrap: wrap;
 }
 
