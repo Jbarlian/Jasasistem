@@ -1,0 +1,67 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="traviscl-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Set up Travis CI" duration="0">
+        <p class="image-container"><img style="width: 573.00px" src="img/7563a9026fb8e16d.png"></p>
+<p><strong>Last Updated:</strong> 29-07-2019</p>
+<h2 is-upgraded><strong>How to set up Travis CI</strong></h2>
+<h3 is-upgraded><strong>Step 1</strong>. Visit the Travis CI website and sign up</h3>
+<p>Visit this link to sign up. <a href="https://travis-ci.com/" target="_blank">https://travis-ci.com</a> (Sign up using GitHub).</p>
+<h3 is-upgraded><strong>Step 2. </strong>Enable the repository that you want to use for Travis CI.</h3>
+<p class="image-container"><img style="width: 271.06px" src="img/84340428ea8d7982.png"></p>
+<p>Click the plus sign on the left side of the page.</p>
+<p>Then find the repository that you want to use and enable it.</p>
+<h3 is-upgraded><strong>Step 3.</strong> Next create a new branch in the repository <strong>(Optional)</strong> and <strong>create a .travis.yml file.</strong></h3>
+<p>Type the following command to create a new branch. <strong>(Optional)</strong></p>
+<p><code>$ git checkout -b &#34;your branch name&#39;</code></p>
+<p>Then make a file within that branch.</p>
+<p><code>$ vim .travis.yml</code></p>
+<p>Within that file, make sure to:</p>
+<ul>
+<li>Specify Project Language.</li>
+<li>Configure dependencies, Databases, etc</li>
+<li>Execute post-build steps (such as tests).</li>
+</ul>
+<p>After doing so, push the .travis.yml file to the GitHub repo <strong>(To branch or Master)</strong>.</p>
+<p><strong>**NOTE: </strong>Travis only runs builds on the commits you push after you&#39;ve added a <code>.travis.yml</code> file. ***</p>
+<h3 is-upgraded><strong>Step 4. </strong>Check the build status page to see if your build passes or fails, by visiting the <a href="https://travis-ci.com/auth" target="_blank">Travis CI</a> and selecting your repository.</h3>
+<p><br>For further information please visit <a href="https://docs.travis-ci.com/user/tutorial/" target="_blank">https://docs.travis-ci.com/user/tutorial/</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

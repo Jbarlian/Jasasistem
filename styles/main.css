@@ -220,7 +220,7 @@ li, ul {
 .site-width {
     margin: 0 auto;
     max-width: 1024px;
-    width: 90vw
+    width: 90vw;
     flex-direction:row;
 }
 
@@ -600,6 +600,13 @@ paper-button {
         width: 75%;
         margin: 0 auto;
     }
+
+    .site-width {
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 90vw;
+    flex-direction:row;
+}
 }
 
 #footer {
