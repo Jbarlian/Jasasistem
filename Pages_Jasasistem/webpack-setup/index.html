@@ -1,0 +1,158 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="webpack-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Setting up Webpack" duration="0">
+        <p class="image-container"><img style="width: 498.00px" src="img/53bc04fc75d1f47b.png"></p>
+<p><strong>Last Updated:</strong> 1-08-2019</p>
+<h2 is-upgraded><strong>How to Set up Webpack</strong></h2>
+<h3 is-upgraded><strong>Step 1</strong>. Create a new directory and install webpack CLI</h3>
+<p>For this example I will name my directory webpacktut.</p>
+<p><code>$ mkdir webpacktut</code></p>
+<p><code>$ cd webpacktut</code></p>
+<p>Next execute the following commands.</p>
+<p><code>$ npm init -y</code> (This creates a package.json file)</p>
+<p><code>$ npm i -D webpack </code></p>
+<p><code>$ npm i -D webpack-cli</code></p>
+<h3 is-upgraded><strong>Step 2. </strong>Edit the scripts in the package.json file.</h3>
+<p>Open up the directory on a text editor. (Sublime or VS Code)</p>
+<p><code>$ subl . (For Sublime)</code></p>
+<p><code>$ code . (For VS Code)</code></p>
+<p>Inside the Scripts, change the &#34;test&#34; to build and inside of it &#34;webpack&#34; like so.</p>
+<p><code>&#34;build&#34;: &#34;webpack&#34;</code></p>
+<h3 is-upgraded><strong>Step 3. </strong>Create a src folder and inside of it an Index.js file.</h3>
+<h3 is-upgraded><strong>Step 4. </strong>Next create a bro.js file and import it to index.js file.</h3>
+<p>Inside the bro.js type the following.</p>
+<p><code>const bro = (greeting) =&gt; {</code></p>
+<p><code>    return `${greeting}, bro`</code></p>
+<p><code>}</code></p>
+<p><code>export { bro }</code></p>
+<p>Next, open the index.js file and import bro.js like so.</p>
+<p><code>import { bro } from &#39;./bro&#39;;</code></p>
+<p><code>console.log(bro(&#39;Dude&#39;))</code></p>
+<h3 is-upgraded><strong>Step 4. </strong>Next create an index.html file inside the src folder and install webpack plugin and HTML loader.</h3>
+<p>In Terminal, execute the following commands.</p>
+<p><code>$ npm i -D html-webpack-plugin html-loader</code></p>
+<p>Inside the index.html file create a scaffolding. (VSCode shortcut !enter)</p>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p><code>&lt;html lang=&#34;en&#34;&gt;</code></p>
+<p><code>&lt;head&gt;</code></p>
+<p><code>    &lt;meta charset=&#34;UTF-8&#34;&gt;</code></p>
+<p><code>    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;</code></p>
+<p><code>    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;ie=edge&#34;&gt;</code></p>
+<p><code>    &lt;title&gt;Document&lt;/title&gt;</code></p>
+<p><code>&lt;/head&gt;</code></p>
+<p><code>&lt;body&gt;</code></p>
+<p><code>&lt;/body&gt;</code></p>
+<p><code>&lt;/html&gt;</code></p>
+<h3 is-upgraded><strong>Step 4. </strong>Next create a webpack.config.js file</h3>
+<p>Create a <strong>webpack.config.js. (</strong>As Shown Below)</p>
+<p class="image-container"><img style="width: 389.50px" src="img/70b85674d157662d.png"></p>
+<h3 is-upgraded><strong>Step 5. </strong>Next Install the webpack-dev-server package.</h3>
+<p>Type the following command to install the package.</p>
+<p><code>$ npm i -D webpack-dev-server</code></p>
+<p>Then go to the package.json file and add to the Scripts like so.</p>
+<p><code> &#34;scripts&#34;: {</code></p>
+<p><code>    &#34;build&#34;: &#34;webpack&#34;,</code></p>
+<p><code>    &#34;start:dev&#34;: &#34;webpack-dev-server&#34;</code></p>
+<p><code>  },</code></p>
+<p>Then we can start the server by executing the following command.</p>
+<p><code>$ npm run start:dev</code></p>
+<p>Now you can view the project via localhost:8080, and in the console you will see &#34;Dude, bro&#34;</p>
+<p>And Live Reloading is enabled.</p>
+<h3 is-upgraded><strong>Step 6. </strong>Install the Babel packages with npm.</h3>
+<p><code>$ npm i -D @babel/core babel-loader @babel/preset-env</code></p>
+<p>After successfully installing babel, edit the <strong>Webpack.Config.js </strong></p>
+<p>Add the Following code into the rules.</p>
+<p><code>test:/\.js$/,</code></p>
+<p><code>exclude: /node_modules/,</code></p>
+<p><code>Use:{</code></p>
+<p><code>loader: &#34;babel-loader&#34;</code></p>
+<p><code>        },</code></p>
+<p class="image-container"><img style="width: 327.65px" src="img/7c43dfd9d23e9206.png"></p>
+<p>Now Babel Transpiling is ready, for future Javascript and it will be compiled down so other browsers can understand it.</p>
+<h3 is-upgraded><strong>Step 7. </strong>Installing File Loader package.</h3>
+<p><code>$ npm i -D file-loader</code></p>
+<p>After successful install, edit the <strong>Webpack.config.js</strong></p>
+<p>Add the following code to rules.</p>
+<p><code>{</code></p>
+<p><code>test: /\.(png|svg|jpg|gif)$/,</code></p>
+<p><code>use: [</code></p>
+<p><code>        &#39;file-loader&#39;</code></p>
+<p><code>     ]</code></p>
+<p><code>},</code></p>
+<p class="image-container"><img style="width: 337.50px" src="img/c84f9678d33bc14.png"></p>
+<p>Then create an images folder inside of source, and put an image of your choice inside the folder (Try to pick a small or medium sized picture).</p>
+<p>In the <strong>index.html</strong> file put img src in the body.</p>
+<p><code>&lt;img src=&#34;images/Beach.jpg&#34;&gt;</code></p>
+<p>Now when you do npm run build, and the asset will load (as you can see in the dist folder).</p>
+<h3 is-upgraded><strong>Step 8. </strong>Setting up Sass and installing the packages needed.</h3>
+<p><code>$ npm i -D node-sass style-loader css-loader sass-loader mini-css-extract-plugin</code></p>
+<p>Next we need to create a <strong>Styles </strong>folder in the <strong>src</strong> folder.</p>
+<p>Then create a <strong>main.scss</strong> file inside the <strong>Styles </strong>folder.</p>
+<p>Create a simple background variable in the <strong>main.scss</strong> file.</p>
+<p class="image-container"><img style="width: 344.50px" src="img/7e72e46619303e5d.png"></p>
+<p>Next, we go to our <strong>index.js</strong> file and import the <strong>main.scss</strong> file.</p>
+<p class="image-container"><img style="width: 368.24px" src="img/34457685b6361a03.png"></p>
+<p>Now we have to add some rules in our <strong>webpack.config.js</strong> file.</p>
+<p>Add a rule and the new plugin we installed. </p>
+<p><strong>Rule below.</strong></p>
+<p><code>{</code></p>
+<p><code>test: /\.scss$/,</code></p>
+<p><code>use: [</code></p>
+<p><code>&#34;Style-loader&#34;,</code></p>
+<p><code>&#34;Css-loader&#34;,</code></p>
+<p><code>&#34;Sass-loader&#34;</code></p>
+<p><code>]</code></p>
+<p><code>},</code></p>
+<p><strong>Plugin below. (First one at the top of the file, second below plugins)</strong></p>
+<p><code>const MiniCssExtractPlugin = require(&#34;mini-css-extract-plugin&#34;);</code></p>
+<p class="image-container"><img style="width: 373.29px" src="img/453af8ce60a17cf2.png"></p>
+<p><code>new MiniCssExtractPlugin({</code></p>
+<p><code>filename: &#34;[name].css&#34;,</code></p>
+<p><code>chunkFilename: &#34;[id].css&#34;</code></p>
+<p><code>})</code></p>
+<p class="image-container"><img style="width: 375.50px" src="img/9a6ce8689a5d7a5a.png"></p>
+<p>Proceed by executing this code:</p>
+<p><code>$ npm run build</code></p>
+<p><code>$ npm run start:dev</code></p>
+<p>After doing so you can start the server and check localhost for any errors. The background should be blue and the image that you inserted should pop up. </p>
+<p>There you have it, basic tutorial of webpack completed.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
