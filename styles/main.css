@@ -429,55 +429,55 @@ paper-button {
 }
 
 .angular-icon {
-    background-image: url(/images/icons/angularicon.png)
+    background-image: url('../images/icons/angularicon.png')
 }
 
 .EC2-icon {
-    background-image: url(/images/icons/EC2icon.png)
+    background-image: url('../images/icons/EC2icon.png')
 }
 
 .Django-icon {
-    background-image: url(/images/icons/Djangoicon.png)
+    background-image: url('../images/icons/Djangoicon.png')
 }
 
 .Docker-icon {
-    background-image: url(/images/icons/Dockericon.png)
+    background-image: url('../images/icons/Dockericon.png')
 }
 
 .Git-icon {
-    background-image: url(/images/icons/Giticon.png)
+    background-image: url('../images/icons/Giticon.png')
 }
 
 .Laravel-icon {
-    background-image: url(/images/icons/Laravelicon.png)
+    background-image: url('../images/icons/Laravelicon.png')
 }
 
 .Nextjs-icon {
-    background-image: url(/images/icons/Nextjsicon.png)
+    background-image: url('../images/icons/Nextjsicon.png')
 }
 
 .Nodejs-icon {
-    background-image: url(/images/icons/Nodejsicon.png)
+    background-image: url('../images/icons/Nodejsicon.png')
 }
 
 .Python-icon {
-    background-image: url(/images/icons/Pythonicon.png)
+    background-image: url('../images/icons/Pythonicon.png')
 }
 
 .Reactjs-icon {
-    background-image: url(/images/icons/Reactjsicon.png)
+    background-image: url('../images/icons/Reactjsicon.png')
 }
 
 .Terraform-icon {
-    background-image: url(/images/icons/Terraformicon.png)
+    background-image: url('../images/icons/Terraformicon.png')
 }
 
 .Travisci-icon {
-    background-image: url(/images/icons/Travisciicon.png)
+    background-image: url('../images/icons/Travisciicon.png')
 }
 
 .Webpack-icon {
-    background-image: url(/images/icons/Webpackicon.png)
+    background-image: url('../images/icons/Webpackicon.png')
 }
 
 #cards {
