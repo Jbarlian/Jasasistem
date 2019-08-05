@@ -409,7 +409,7 @@ li, ul {
     }
 } */
 
-@media (max-width:767px) {
+/* @media (max-width:767px) {
 
     #mainToolbar {
         height: 56px
@@ -419,7 +419,7 @@ li, ul {
         margin-right: 8px;
         width: 40px
     }
-}
+} */
 
 .codelab-card {
     border-bottom-color: #4285f4
@@ -613,7 +613,7 @@ paper-button {
         /* margin: 0 0 16px; */
         margin: 1%;
         max-width: 100%;
-        width: 100%
+        /* width: 100% */
     }
 
     .card-container {
@@ -651,7 +651,7 @@ paper-button {
         margin-top: 1.5%;
         margin-bottom: 1.5%;
         flex-wrap: wrap;
-        width: 50%;
+        width: 55%;
         margin: 0 auto;
     }
 
