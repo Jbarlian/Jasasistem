@@ -642,7 +642,7 @@ paper-button {
     .codelab-card {
         flex: 1 0 30%;
         margin: 1%;
-        max-width: calc(30% + 16px);
+        max-width: calc(40% + 10px);
     }
     .card-container {
         display:flex;
@@ -651,7 +651,7 @@ paper-button {
         margin-top: 1.5%;
         margin-bottom: 1.5%;
         flex-wrap: wrap;
-        width: 75%;
+        width: 50%;
         margin: 0 auto;
     }
 
@@ -660,7 +660,7 @@ paper-button {
     max-width: 1024px;
     width: 90vw;
     flex-direction:row;
-}
+    }
 }
 
 #footer {
@@ -728,6 +728,7 @@ paper-button {
     #footer .link-list {
         margin: 0 0 24px
     }
+    
 }
 
 .card-container {
@@ -736,6 +737,7 @@ paper-button {
     flex-direction: row;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
+    max-width: 80%;
     flex-wrap: wrap;
 }
 
