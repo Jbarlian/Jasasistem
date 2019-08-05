@@ -1,0 +1,220 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="graphql-setup"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Setting up a GraphQL Server" duration="0">
+        <p class="image-container"><img style="width: 600.00px" src="img/68f88a0bfbadc480.png"></p>
+<p><strong>Last Updated:</strong> 15-07-2019</p>
+<h2 is-upgraded><strong>How to install and setup GraphQL</strong></h2>
+<h3 is-upgraded><strong>Step 1</strong>. Verify Node and NPM versions.</h3>
+<p class="image-container"><img style="width: 362.50px" src="img/99a4017135773854.png"></p>
+<h3 is-upgraded><strong>Step 2. </strong>Create a project and open in VSCode.</h3>
+<p>The root folder of project can be named as graphqltut.</p>
+<p>Open the folder using visual studio code.</p>
+<p><code>$ mkdir graphqltut</code></p>
+<p><code>$ cd graphqltut</code></p>
+<h3 is-upgraded><strong>Step 3.</strong> Create package.json and install the dependencies. </h3>
+<p>Create a package.json file which will contain all the dependencies of the GraphQL server application.</p>
+<p><code>$ npm init -y</code></p>
+<p><strong>***NOTE: In the package.json file change the main from index.js to server.js***</strong></p>
+<p>Install the dependencies by using the command as given below.</p>
+<p><code>$ npm i express express-graphql graphql</code></p>
+<p><code>$ npm i --save-dev nodemon</code></p>
+<p>Next in the package.json file change the scripts to the following.</p>
+<p><code>&#34;Scripts&#34;: {</code></p>
+<p><code>        &#34;devStart&#34;: &#34;nodemon server.js&#34;</code></p>
+<p><code>}</code></p>
+<h3 is-upgraded><strong>Step 3.</strong> Create a server.js file in the project directory.</h3>
+<p>Inside the server.js type the following code so that we can start our server.</p>
+<p><code>const express = require(&#39;express&#39;)</code></p>
+<p><code>const expressGraphQL = require(&#39;express-graphql&#39;)</code></p>
+<p><code>const {</code></p>
+<p><code>GraphQLSchema,</code></p>
+<p><code>GraphQLObjectType,</code></p>
+<p><code>GraphQLString,</code></p>
+<p><code>GraphQLList,</code></p>
+<p><code>GraphQLInt,</code></p>
+<p><code>GraphQLNonNull</code></p>
+<p><code>} = require(&#39;graphql&#39;)</code></p>
+<p><code>const app = express()</code></p>
+<p><code>app.use(&#39;./graphql&#39;, expressGraphQL({</code></p>
+<p><code>        schema: schema,</code></p>
+<p><code>graphiql: true</code></p>
+<p><code>}))</code></p>
+<p><code>app.listen(5000., () =&gt; console.log(&#39;server running&#39;))</code></p>
+<p>Next we can test if it works by executing the following command in the terminal.</p>
+<p><code>$ npm run devStart</code></p>
+<h3 is-upgraded><strong>Step 3.</strong> Create an array of dummy data in the <strong>server.js </strong>file.</h3>
+<p>This serves as a dummy data for testing purposes.</p>
+<p><code>const authors = [</code></p>
+<p><code>    { id: 1, name: &#39;J. K. Rowling&#39; },</code></p>
+<p><code>    { id: 2, name: &#39;J. R. R. Tolkien&#39; },</code></p>
+<p><code>    { id: 3, name: &#39;Brent Weeks&#39; }</code></p>
+<p><code>]</code></p>
+<p><code>const books = [</code></p>
+<p><code>    { id: 1, name: &#39;Harry Potter and the Chamber of Secrets&#39;, authorId: 1 },</code></p>
+<p><code>    { id: 2, name: &#39;Harry Potter and the Prisoner of Azkaban&#39;, authorId: 1 },</code></p>
+<p><code>    { id: 3, name: &#39;Harry Potter and the Goblet of Fire&#39;, authorId: 1 },</code></p>
+<p><code>    { id: 4, name: &#39;The Fellowship of the Ring&#39;, authorId: 2 },</code></p>
+<p><code>    { id: 5, name: &#39;The Two Towers&#39;, authorId: 2 },</code></p>
+<p><code>    { id: 6, name: &#39;The Return of the King&#39;, authorId: 2 },</code></p>
+<p><code>    { id: 7, name: &#39;The Way of Shadows&#39;, authorId: 3 },</code></p>
+<p><code>    { id: 8, name: &#39;Beyond the Shadows&#39;, authorId: 3 }</code></p>
+<p><code>]</code></p>
+<h3 is-upgraded><strong>Step 3.</strong> Next create the following variables in the <strong>server.js. </strong>file.</h3>
+<p>First we create the <strong>BookType</strong> variable.</p>
+<p>This will be called later on by our query function to get all the book data.</p>
+<p>In this case only 3 fields are used (<strong>ID, Name, and Author ID</strong>).</p>
+<p><code>const BookType = new GraphQLObjectType({</code></p>
+<p><code>name: &#39;Book&#39;,</code></p>
+<p><code>description: &#39;This represents a book written by an author&#39;,</code></p>
+<p><code>fields: () =&gt; ({</code></p>
+<p><code>id: { type: GraphQLNonNull(GraphQLInt) },</code></p>
+<p><code>name: { type: GraphQLNonNull(GraphQLString) },</code></p>
+<p><code>authorId: { type: GraphQLNonNull(GraphQLInt) },</code></p>
+<p><code>author: {</code></p>
+<p><code>type: AuthorType,</code></p>
+<p><code>resolve: (book) =&gt; {</code></p>
+<p><code>return authors.find(author =&gt; author.id === book.authorId)</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>})</code></p>
+<p><code>})</code></p>
+<p>Next we need to create the <strong>AuthorType</strong> variable</p>
+<p>Same purpose as the <strong>BookType</strong> above.</p>
+<p>The fields used for the author is just (<strong>Name</strong> and <strong>ID</strong>).</p>
+<p><code>const AuthorType = new GraphQLObjectType({</code></p>
+<p><code>name: &#39;Author&#39;,</code></p>
+<p><code>description: &#39;This represents an author of a book&#39;,</code></p>
+<p><code>fields: () =&gt; ({</code></p>
+<p><code>id: { type: GraphQLNonNull(GraphQLInt) },</code></p>
+<p><code>name: { type: GraphQLNonNull(GraphQLString) },</code></p>
+<p><code>books: {</code></p>
+<p><code>type: new GraphQLList(BookType),</code></p>
+<p><code>resolve: (author) =&gt; {</code></p>
+<p><code>return books.filter(book =&gt; book.authorId === author.id)</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>})</code></p>
+<p><code>})</code></p>
+<p>Next we create the <strong>RootQueryType</strong> variable.</p>
+<p>Type the following code below.</p>
+<p><code>const RootQueryType = new GraphQLObjectType({</code></p>
+<p><code>name: &#39;Query&#39;,</code></p>
+<p><code>description: &#39;Root Query&#39;,</code></p>
+<p><code>fields: () =&gt; ({</code></p>
+<p><code>book: {</code></p>
+<p><code>type: BookType,</code></p>
+<p><code>description: &#39;A Single Book&#39;,</code></p>
+<p><code>args: {</code></p>
+<p><code>id: { type: GraphQLInt }</code></p>
+<p><code>},</code></p>
+<p><code>resolve: (parent, args) =&gt; books.find(book =&gt; book.id === args.id)</code></p>
+<p><code>},</code></p>
+<p><code>books: {</code></p>
+<p><code>type: new GraphQLList(BookType),</code></p>
+<p><code>description: &#39;List of All Books&#39;,</code></p>
+<p><code>resolve: () =&gt; books</code></p>
+<p><code>},</code></p>
+<p><code>authors: {</code></p>
+<p><code>type: new GraphQLList(AuthorType),</code></p>
+<p><code>description: &#39;List of All Authors&#39;,</code></p>
+<p><code>resolve: () =&gt; authors</code></p>
+<p><code>},</code></p>
+<p><code>author: {</code></p>
+<p><code>type: AuthorType,</code></p>
+<p><code>description: &#39;A Single Author&#39;,</code></p>
+<p><code>args: {</code></p>
+<p><code>id: { type: GraphQLInt }</code></p>
+<p><code>},</code></p>
+<p><code>resolve: (parent, args) =&gt; authors.find(author =&gt; author.id === args.id)</code></p>
+<p><code>}</code></p>
+<p><code>})</code></p>
+<p><code>})</code></p>
+<p>Next we create the <strong>RootMutationType</strong> variable.</p>
+<p>The purpose of this is the same as <strong>POST, PUT, DELETE</strong> on a <strong>REST API</strong> server.</p>
+<p><code>const RootMutationType = new GraphQLObjectType({</code></p>
+<p><code>name: &#39;Mutation&#39;,</code></p>
+<p><code>description: &#39;Root Mutation&#39;,</code></p>
+<p><code>fields: () =&gt; ({</code></p>
+<p><code>addBook: {</code></p>
+<p><code>type: BookType,</code></p>
+<p><code>description: &#39;Add a book&#39;,</code></p>
+<p><code>args: {</code></p>
+<p><code>name: { type: GraphQLNonNull(GraphQLString) },</code></p>
+<p><code>authorId: { type: GraphQLNonNull(GraphQLInt) }</code></p>
+<p><code>},</code></p>
+<p><code>resolve: (parent, args) =&gt; {</code></p>
+<p><code>const book = { id: books.length + 1, name: args.name, authorId: args.authorId }</code></p>
+<p><code>books.push(book)</code></p>
+<p><code>return book</code></p>
+<p><code>}</code></p>
+<p><code>},</code></p>
+<p><code>addAuthor: {</code></p>
+<p><code>type: AuthorType,</code></p>
+<p><code>description: &#39;Add an author&#39;,</code></p>
+<p><code>args: {</code></p>
+<p><code>name: { type: GraphQLNonNull(GraphQLString) }</code></p>
+<p><code>},</code></p>
+<p><code>resolve: (parent, args) =&gt; {</code></p>
+<p><code>const author = { id: authors.length + 1, name: args.name }</code></p>
+<p><code>authors.push(author)</code></p>
+<p><code>return author</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>})</code></p>
+<p><code>})</code></p>
+<p>Finally we need to create a <strong>Schema </strong>and use that schema.</p>
+<p><code>const schema = new GraphQLSchema({</code></p>
+<p><code>query: RootQueryType,</code></p>
+<p><code>mutation: RootMutationType</code></p>
+<p><code>})</code></p>
+<h3 is-upgraded><strong>Step 4.</strong> Now it&#39;s time to run the server and test our query in the GraphQL interface.</h3>
+<p>Finally now we run the server and test the query.</p>
+<p><code>$ npm run devStart</code></p>
+<p>Once the server started open up <strong>localhost:5000/graphql</strong></p>
+<p>Then test by running a query like so.</p>
+<p class="image-container"><img style="width: 606.11px" src="img/e02ab6ab795c15b3.png"></p>
+<p>And there you have it. GraphQL allows you to query the exact type of data that you need, which makes it much more efficient than using a REST API.</p>
+<p><strong>***NOTE: This is a simple version of setting up a GraphQL server***</strong></p>
+<p>For more information please visit the link below.</p>
+<p><a href="https://www.youtube.com/watch?v=ZQL7tL2S0oQ&t=654s" target="_blank">https://www.youtube.com/watch?v=ZQL7tL2S0oQ&amp;t=654s</a></p>
+<p><a href="https://github.com/WebDevSimplified/Learn-GraphQL/blob/master/server.js" target="_blank">https://github.com/WebDevSimplified/Learn-GraphQL/blob/master/server.js</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
