@@ -433,6 +433,10 @@ paper-button {
     background-image: url('../images/icons/angularicon.png')
 }
 
+.bootstrap-icon {
+    background-image: url('../images/icons/bootstrapicon.png')
+}
+
 .EC2-icon {
     background-image: url('../images/icons/EC2icon.png')
 }
